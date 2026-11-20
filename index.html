@@ -723,6 +723,7 @@ body.present #apxbar{display:none}
   padding:3px 9px;border-radius:5px;margin-left:10px;white-space:nowrap}
 @media print{#drpanel{break-inside:avoid}}
 </style>
+<style>#lang{display:flex;gap:4px;margin-left:6px;padding-left:14px;border-left:1px solid var(--hair)}#lang a{font:700 12px/1 Inter,"Noto Sans KR",Arial;text-decoration:none;color:var(--navy);border:1px solid var(--hair);background:var(--card);padding:9px 12px;border-radius:5px;white-space:nowrap}#lang a.on{background:var(--navy);color:#fff;border-color:var(--navy)}@media print{#lang{display:none}}</style>
 </head>
 <body>
 <div id="top">
@@ -731,6 +732,7 @@ body.present #apxbar{display:none}
 <button id="bx" title="열려 있는 모든 항목을 접고 맨 위로">전체 닫기</button>
 <button id="bn">발표 스크립트 전체 열기</button>
 <button id="bt">목차</button>
+<nav id="lang" aria-label="Language"><a href="./" hreflang="ko" class="on" aria-current="page">한국어</a><a href="en.html" hreflang="en">English</a><a href="pl.html" hreflang="pl">Polski</a></nav>
 </div>
 <div id="prog"></div>
 <nav id="toc"></nav>
@@ -3490,5 +3492,6 @@ var DOC_DATE    = '2026-08-28';       // ← 개정일
   };
 })();
 </script>
+<script>document.querySelectorAll("#lang a").forEach(function(a){a.addEventListener("click",function(){if(location.hash)a.href=a.getAttribute("href").split("#")[0]+location.hash;});});</script>
 </body>
 </html>
